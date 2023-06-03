@@ -23,3 +23,7 @@
 ### Functional testing vs Unit testing:
 
 ![Functional testing vs Unit testing](./FunctionalVsUnit.jpeg)
+
+### TDD vs BDD (Test driven dev and Behavior driven dev)
+
+![TDDvsBDD](./TDDvsBDD.jpeg)
