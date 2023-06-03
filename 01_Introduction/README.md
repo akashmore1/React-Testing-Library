@@ -22,4 +22,4 @@
 
 ### Functional testing vs Unit testing:
 
-[Functional testing vs Unit testing]("./FunctionalVsUnit.jpeg")
+![Functional testing vs Unit testing]("./FunctionalVsUnit.jpeg")
