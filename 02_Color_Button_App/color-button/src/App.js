@@ -8,22 +8,22 @@ export const convertCamelCaseIntoSpacedCamelCase = (colorName) => {
 
 function App() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-  const [buttonText, setButtonText] = useState("Change to blue");
-  const [buttonColor, setButtonColor] = useState("red");
+  const [buttonText, setButtonText] = useState("Change to midnight blue");
+  const [buttonColor, setButtonColor] = useState("MediumVioletRed");
 
   const onClickHandler = () => {
     setButtonText((prevState) => {
-      if (prevState === "Change to blue") {
-        return "Change to red";
+      if (prevState === "Change to midnight blue") {
+        return "Change to Medium Violet Red";
       } else {
-        return "Change to blue";
+        return "Change to midnight blue";
       }
     });
     setButtonColor((prevState) => {
-      if (prevState === "red") {
-        return "blue";
+      if (prevState === "MediumVioletRed") {
+        return "MidnightBlue";
       } else {
-        return "red";
+        return "MediumVioletRed";
       }
     });
   };
@@ -48,10 +48,10 @@ function App() {
           if (e.target.checked) {
             setButtonColor("grey");
           } else {
-            if (buttonText === "Change to blue") {
-              setButtonColor("red");
+            if (buttonText === "Change to midnight blue") {
+              setButtonColor("MediumVioletRed");
             } else {
-              setButtonColor("blue");
+              setButtonColor("MidnightBlue");
             }
           }
         }}
