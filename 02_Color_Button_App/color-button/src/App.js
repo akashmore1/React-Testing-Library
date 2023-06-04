@@ -31,7 +31,13 @@ function App() {
     <div className="App">
       <div>
         <button
-          style={{ backgroundColor: buttonColor }}
+          style={{
+            backgroundColor: buttonColor,
+            width: "14rem",
+            height: "4rem",
+            margin: "1rem",
+            color: "white",
+          }}
           disabled={isButtonDisabled}
           onClick={() => {
             onClickHandler();
