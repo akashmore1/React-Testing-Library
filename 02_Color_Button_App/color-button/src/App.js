@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   const [buttonText, setButtonText] = useState("Change to blue");
   const [buttonColor, setButtonColor] = useState("red");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const onClickHandler = () => {
     setButtonText((prevState) => {
       if (prevState === "Change to blue") {
@@ -25,12 +26,19 @@ function App() {
     <div className="App">
       <button
         style={{ backgroundColor: buttonColor }}
+        disabled={isButtonDisabled}
         onClick={() => {
           onClickHandler();
         }}
       >
         {buttonText}
       </button>
+      <input
+        type="checkbox"
+        onClick={(e) => {
+          setIsButtonDisabled(e.target.checked);
+        }}
+      />
     </div>
   );
 }
