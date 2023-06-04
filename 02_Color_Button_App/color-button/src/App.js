@@ -3,9 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [buttonText, setButtonText] = useState("Change to blue");
   const [buttonColor, setButtonColor] = useState("red");
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
   const onClickHandler = () => {
     setButtonText((prevState) => {
       if (prevState === "Change to blue") {
@@ -24,21 +25,34 @@ function App() {
   };
   return (
     <div className="App">
-      <button
-        style={{ backgroundColor: buttonColor }}
-        disabled={isButtonDisabled}
-        onClick={() => {
-          onClickHandler();
-        }}
-      >
-        {buttonText}
-      </button>
+      <div>
+        <button
+          style={{ backgroundColor: buttonColor }}
+          disabled={isButtonDisabled}
+          onClick={() => {
+            onClickHandler();
+          }}
+        >
+          {buttonText}
+        </button>
+      </div>
       <input
         type="checkbox"
+        id="disable_button_checkbox"
         onClick={(e) => {
           setIsButtonDisabled(e.target.checked);
+          if (e.target.checked) {
+            setButtonColor("grey");
+          } else {
+            if (buttonText === "Change to blue") {
+              setButtonColor("red");
+            } else {
+              setButtonColor("blue");
+            }
+          }
         }}
       />
+      <label htmlFor="disable_button_checkbox">Disable Button</label>
     </div>
   );
 }
