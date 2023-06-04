@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import App from "./App";
+import { convertCamelCaseIntoSpacedCamelCase } from "./App";
 
 test("button has correct initial color, and updates when clicked", () => {
   render(<App />);
@@ -57,4 +58,14 @@ test("disbaled buttons color is grey", () => {
 
   fireEvent.click(checkbox);
   expect(colorButton).toHaveStyle({ backgroundColor: "grey" });
+});
+
+describe("test camel case converter", () => {
+  test("", () => {
+    expect(convertCamelCaseIntoSpacedCamelCase("Red")).toBe("Red");
+    expect(convertCamelCaseIntoSpacedCamelCase("SkyBlue")).toBe("Sky Blue");
+    expect(convertCamelCaseIntoSpacedCamelCase("RedBlueGreen")).toBe(
+      "Red Blue Green"
+    );
+  });
 });

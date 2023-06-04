@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+export const convertCamelCaseIntoSpacedCamelCase = (colorName) => {
+  return colorName.replace(/\B([A-Z])\B/g, " $1");
+};
+
 function App() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [buttonText, setButtonText] = useState("Change to blue");
